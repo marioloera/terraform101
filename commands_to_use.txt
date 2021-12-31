@@ -7,7 +7,8 @@ terraform init
 terraform plan
 
 terraform apply
-
+# passing variables values
+terraform apply -var "content=FIFA 2021" -var "filename=./test01.txt"
 terraform destroy
 
 # use the content in terraform.tfstate
