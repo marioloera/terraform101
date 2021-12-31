@@ -1,6 +1,8 @@
 terraform --version
 
 terraform init
+# creates .terraform.lock.hcl with list all the providers 
+# creates .terraform dir with the providers
 
 terraform plan
 
@@ -8,4 +10,6 @@ terraform apply
 
 terraform destroy
 
-terrafrom state
+# use the content in terraform.tfstate
+terraform state list
+terraform state show local_file.games
