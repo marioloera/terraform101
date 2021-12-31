@@ -1,6 +1,6 @@
 variable "filename" {
 
-	default = "/Users/mario.loera/c/terraform101/artifacts/test.txt"
+	default = "./artifacts/test.txt"
 	type = string
 }
 
