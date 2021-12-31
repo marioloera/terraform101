@@ -1,6 +1,6 @@
 resource "local_file" "games" {
-    filename = "/Users/mario.loera/c/terraform101/TerraformForAbsoluteBeginners/fav_games.txt"
-    sensitive_content = "Fifa 2021"
+    filename = var.filename
+    sensitive_content = var.content
     file_permission = "0755"
 }
 
