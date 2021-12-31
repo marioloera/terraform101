@@ -4,6 +4,8 @@ terraform init
 
 terraform plan
 
-terrafrom state
-
 terraform apply
+
+terraform destroy
+
+terrafrom state
