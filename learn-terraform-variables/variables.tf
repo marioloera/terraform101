@@ -22,6 +22,11 @@ variable "enable_vpn_gateway" {
   default     = false
 }
 
+variable "ec2_instance_type" {
+  description = "AWS EC2 instance type."
+  type        = string
+}
+
 variable "resource_tags" {
   description = "Tags to set for all resources"
   type        = map(string)
