@@ -1,14 +1,14 @@
 variable "newline" {
-	default = "\n"
+  default = "\n"
 }
 
 variable "filename" {
 
-	default = "./artifacts/test.txt"
-	type = string
+  default = "./artifacts/test.txt"
+  type    = string
 }
 
 variable "content" {
 
-	type = string
+  type = string
 }
