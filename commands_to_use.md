@@ -77,3 +77,9 @@ interactive console that you can use to evaluate expressions in the context of y
     slice(var.private_subnet_cidr_blocks, 0, 3)
     var.resource_tags["environment"]
 ```
+
+# terraform import
+Now run terraform import to attach the existing Docker container to the docker_container.web resource you just created. Terraform import requires this Terraform resource ID and the full Docker container ID. In the following example, the command docker inspect --format="{{.ID}}" hashicorp-learn returns the full SHA256 container ID.
+```
+terraform import docker_container.web $(docker inspect --format="{{.ID}}" hashicorp-learn)
+```
