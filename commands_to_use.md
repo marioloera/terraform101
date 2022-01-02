@@ -1,7 +1,7 @@
 # terraform --version
 
 # terraform init
-* creates .terraform.lock.hcl with list all the providers 
+* creates .terraform.lock.hcl with list all the providers
 * creates .terraform dir with the providers
 
 # terraform plan
@@ -23,7 +23,7 @@ export TF_VAR_content="mario2"
 * seems tfvars files have higer priority than environmen variables, but you can specify a variables file:
 ```
  terraform apply -var-file=terraform.tfvars.json
- or 
+ or
  terraform apply -var-file=foo.json
 ```
 # terraform destroy
