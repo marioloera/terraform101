@@ -41,3 +41,31 @@ make sure your configuration is syntactically valid and internally consistent.
 # terraform output
 Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use.
 You can use Terraform outputs to connect your Terraform projects with other parts of your infrastructure, or with other Terraform projects
+
+# terraform console
+interactive console that you can use to evaluate expressions in the context of your configuration. This can be very useful when working with and troubleshooting variable definitions.
+```
+    variable "resource_tags" {
+      type        = map(string)
+      default = {
+        project     = "project-alpha",
+        environment = "dev"
+      }
+    }
+
+    variable "public_subnet_cidr_blocks" {
+      type        = list(string)
+      default = [
+        "10.0.1.0/24",
+        "10.0.2.0/24",
+        "10.0.3.0/24",
+      ]
+    }
+
+```
+
+```
+    var.private_subnet_cidr_blocks[1]
+    slice(var.private_subnet_cidr_blocks, 0, 3)
+    var.resource_tags["environment"]
+```
