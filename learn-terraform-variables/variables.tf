@@ -22,6 +22,15 @@ variable "enable_vpn_gateway" {
   default     = false
 }
 
+variable "resource_tags" {
+  description = "Tags to set for all resources"
+  type        = map(string)
+  default = {
+    project     = "project-alpha",
+    environment = "dev"
+  }
+}
+
 variable "public_subnet_count" {
   description = "Number of public subnets."
   type        = number
