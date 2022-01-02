@@ -41,6 +41,11 @@ make sure your configuration is syntactically valid and internally consistent.
 # terraform output
 Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use.
 You can use Terraform outputs to connect your Terraform projects with other parts of your infrastructure, or with other Terraform projects
+```
+terraform output ip
+terraform output -raw ip
+terraform output -json
+```
 
 # terraform console
 interactive console that you can use to evaluate expressions in the context of your configuration. This can be very useful when working with and troubleshooting variable definitions.
