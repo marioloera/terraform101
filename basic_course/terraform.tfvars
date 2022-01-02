@@ -1,2 +1,2 @@
-filename="./artifacts/test_01.txt"
-content="mario2"
+filename = "./artifacts/test_01.txt"
+content  = "mario01"

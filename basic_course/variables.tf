@@ -1,3 +1,7 @@
+variable "newline" {
+	default = "\n"
+}
+
 variable "filename" {
 
 	default = "./artifacts/test.txt"
