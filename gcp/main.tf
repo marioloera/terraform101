@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("./keys/chrome-bearing-336918-09064f2caabd_terraform.json")
+  credentials = file(var.credentials_file)
 
-  project = "chrome-bearing-336918"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
 
 resource "google_compute_network" "vpc_network" {
