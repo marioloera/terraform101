@@ -37,3 +37,7 @@ automatically updates configurations files in the current directory for readabil
 
 # terraform validate
 make sure your configuration is syntactically valid and internally consistent.
+
+# terraform output
+Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use.
+You can use Terraform outputs to connect your Terraform projects with other parts of your infrastructure, or with other Terraform projects
