@@ -31,3 +31,9 @@ export TF_VAR_content="mario2"
 # terraform state list
 # terraform state show local_file.games
 uses the content in terraform.tfstate
+
+# terraform fmt -recursive
+automatically updates configurations files in the current directory for readability and consistency.
+
+# terraform validate
+make sure your configuration is syntactically valid and internally consistent.
