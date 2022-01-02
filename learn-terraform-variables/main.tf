@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = var.aws_region
 }
 
 data "aws_availability_zones" "available" {
@@ -18,14 +18,14 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.64.0"
 
-  cidr = "10.0.0.0/16"
+  cidr = var.vpc_cidr_block
 
   azs             = data.aws_availability_zones.available.names
   private_subnets = ["10.0.101.0/24", "10.0.102.0/24"]
   public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
 
   enable_nat_gateway = true
-  enable_vpn_gateway = false
+  enable_vpn_gateway = var.enable_vpn_gateway
 
   tags = {
     project     = "project-alpha",
@@ -109,7 +109,7 @@ module "elb_http" {
 module "ec2_instances" {
   source = "./modules/aws-instance"
 
-  instance_count     = 2
+  instance_count     = var.instance_count
   instance_type      = "t2.micro"
   subnet_ids         = module.vpc.private_subnets[*]
   security_group_ids = [module.app_security_group.this_security_group_id]
