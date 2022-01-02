@@ -10,3 +10,12 @@ resource "local_file" "games0" {
   # filename = "${path.module}/foo.bar"
   filename = "./artifacts/fav_games0.txt"
 }
+
+resource "local_file" "example_json" {
+  filename = "./artifacts/example.json"
+  content = jsonencode({
+    a = 1
+    b = 23.34
+    c = "hello"
+  })
+}
