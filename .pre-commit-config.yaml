@@ -12,4 +12,4 @@ repos:
     rev: v0.1.17 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
     hooks:
       - id: terraform-fmt # do not apply the format
-      - id: terraform-validate # not recursive
+      # - id: terraform-validate # not recursive and slow

@@ -4,6 +4,9 @@
 * creates .terraform.lock.hcl with list all the providers
 * creates .terraform dir with the providers
 
+## terraform init -upgrade
+The -upgrade flag will upgrade all providers to the latest version consistent within the version constraints previously established in your configuration.
+
 # terraform plan
 
 # terraform apply
