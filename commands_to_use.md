@@ -35,6 +35,12 @@ export TF_VAR_content="mario2"
 # terraform state show local_file.games
 uses the content in terraform.tfstate
 
+# terraform state rm
+removes specific resources from your state file. This does not remove the resource from your configuration or destroy the infrastructure itself.
+```
+terraform state rm aws_security_group.sg_8080
+```
+
 # terraform fmt -recursive
 automatically updates configurations files in the current directory for readability and consistency.
 
@@ -82,4 +88,10 @@ interactive console that you can use to evaluate expressions in the context of y
 Now run terraform import to attach the existing Docker container to the docker_container.web resource you just created. Terraform import requires this Terraform resource ID and the full Docker container ID. In the following example, the command docker inspect --format="{{.ID}}" hashicorp-learn returns the full SHA256 container ID.
 ```
 terraform import docker_container.web $(docker inspect --format="{{.ID}}" hashicorp-learn)
+```
+
+# -replace flag for terraform plan and terraform apply
+The -replace flag allows you to target specific resources and avoid destroying all the resources in your workspace just to fix one of them.
+```
+terraform plan -replace="aws_instance.example"
 ```
