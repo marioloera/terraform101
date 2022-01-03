@@ -4,9 +4,18 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.58.0"
     }
+
+    http = {
+      source  = "hashicorp/http"
+      version = "2.1.0"
+    }
   }
 
   required_version = ">= 1.0.5"
+}
+
+data "http" "local_ip" {
+  url = "http://ipv4.icanhazip.com"
 }
 
 provider "aws" {
