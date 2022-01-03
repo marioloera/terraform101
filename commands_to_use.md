@@ -35,6 +35,12 @@ export TF_VAR_content="mario2"
 # terraform state show local_file.games
 uses the content in terraform.tfstate
 
+# terraform state rm
+removes specific resources from your state file. This does not remove the resource from your configuration or destroy the infrastructure itself.
+```
+terraform state rm aws_security_group.sg_8080
+```
+
 # terraform fmt -recursive
 automatically updates configurations files in the current directory for readability and consistency.
 
