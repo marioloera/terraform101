@@ -43,6 +43,6 @@ resource "aws_s3_bucket_object" "objects" {
   acl          = "public-read"
   key          = "${random_pet.object_names[count.index].id}.txt"
   bucket       = module.s3_bucket.s3_bucket_id
-  content      = "Example object #${count.index}"
+  content      = "Bucket object #${count.index}"
   content_type = "text/plain"
 }
