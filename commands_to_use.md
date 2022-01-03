@@ -95,3 +95,9 @@ The -replace flag allows you to target specific resources and avoid destroying a
 ```
 terraform plan -replace="aws_instance.example"
 ```
+
+# -refresh-only flag for terraform plan and terraform apply
+The -refresh-only mode for terraform plan and terraform apply operations makes it safer to check Terraform state against real infrastructure by letting you review proposed changes to the state file. It lets you avoid mistakenly removing an existing resource from state and gives you a chance to correct your configuration.
+```
+terraform plan -refresh-only
+```
