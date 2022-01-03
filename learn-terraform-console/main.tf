@@ -18,6 +18,10 @@ data "http" "local_ip" {
   url = "http://ipv4.icanhazip.com"
 }
 
+locals {
+  local_ip = chomp(data.http.local_ip.body)
+}
+
 provider "aws" {
   region = var.aws_region
 }
