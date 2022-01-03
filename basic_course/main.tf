@@ -3,6 +3,13 @@ resource "local_file" "f1" {
   filename = "./artifacts/f1.txt"
 }
 
+resource "local_file" "fx" {
+  count = 3
+
+  filename = "./artifacts/fx_${count.index}.txt"
+  content  = "file: ${count.index}\n"
+}
+
 resource "local_file" "games" {
   filename = var.filename
   # sensitive_content = var.content
