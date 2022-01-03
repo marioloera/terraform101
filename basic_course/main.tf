@@ -1,3 +1,8 @@
+resource "local_file" "f1" {
+  content  = "hola 1\n"
+  filename = "./artifacts/f1.txt"
+}
+
 resource "local_file" "games" {
   filename = var.filename
   # sensitive_content = var.content
