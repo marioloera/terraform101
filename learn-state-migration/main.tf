@@ -7,6 +7,12 @@ terraform {
       version = "3.0.1"
     }
   }
+  cloud {
+    organization = "mll29"
+    workspaces {
+      name = "Example-Workspace"
+    }
+  }
   required_version = ">= 1.1.0"
 }
 
