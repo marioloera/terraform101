@@ -4,7 +4,7 @@ resource "local_file" "f1" {
 }
 
 resource "local_file" "fx" {
-  count = 3
+  count = 2
 
   filename = "./artifacts/fx_${count.index}.txt"
   content  = "file: ${count.index}\n"
