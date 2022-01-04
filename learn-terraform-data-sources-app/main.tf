@@ -6,8 +6,25 @@ terraform {
   }
 }
 
+# You can use the terraform_remote_state data source to use another
+# Terraform workspace's output data.
+# Tip: We recommend using provider-specific data sources when convenient.
+# terraform_remote_state is more flexible,
+# but requires access to the whole Terraform state.
+data "terraform_remote_state" "vpc" {
+  backend = "local"
+
+  config = {
+    path = "../learn-terraform-data-sources-vpc/terraform.tfstate"
+  }
+}
+
 provider "aws" {
-  region = "us-east-1"
+  # region = "us-east-1"
+  # Replace the hard-coded region configuration in main.tf
+  #  with the region output from the VPC workspace.
+  region = data.terraform_remote_state.vpc.outputs.aws_region
+
 }
 
 resource "random_string" "lb_id" {
@@ -24,8 +41,8 @@ module "elb_http" {
 
   internal = false
 
-  security_groups = []
-  subnets         = []
+  security_groups = data.terraform_remote_state.vpc.outputs.lb_security_group_ids
+  subnets         = data.terraform_remote_state.vpc.outputs.public_subnet_ids
 
   number_of_instances = length(aws_instance.app)
   instances           = aws_instance.app.*.id
