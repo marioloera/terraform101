@@ -21,3 +21,8 @@ output "private_subnet_ids" {
 output "aws_availability_zones" {
   value = data.aws_availability_zones.available.names
 }
+
+output "aws_region" {
+  description = "AWS region"
+  value       = data.aws_region.current.name
+}
