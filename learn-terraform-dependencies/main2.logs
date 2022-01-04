@@ -1,0 +1,19 @@
+# output looks like after Apply
+
+aws_s3_bucket.example: Creating...
+aws_s3_bucket.example: Still creating... [10s elapsed]
+## ...
+aws_s3_bucket.example: Creation complete after 1m0s [id=terraform-20200813175124184300000001]
+aws_instance.example_c: Creating...
+aws_instance.example_c: Still creating... [10s elapsed]
+aws_instance.example_c: Still creating... [20s elapsed]
+aws_instance.example_c: Still creating... [30s elapsed]
+aws_instance.example_c: Still creating... [40s elapsed]
+aws_instance.example_c: Creation complete after 44s [id=i-08a44071a2517179f]
+module.example_sqs_queue.aws_sqs_queue.this[0]: Creating...
+module.example_sqs_queue.aws_sqs_queue.this[0]: Creation complete after 6s [id=https://sqs.us-west-1.amazonaws.com/561656980159/terraform-20200813175223563000000002]
+module.example_sqs_queue.data.aws_arn.this[0]: Reading...
+module.example_sqs_queue.data.aws_arn.this[0]: Read complete after 0s [id=arn:aws:sqs:us-west-1:561656980159:terraform-20200813175223563000000002]
+
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
