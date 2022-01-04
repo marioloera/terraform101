@@ -15,7 +15,8 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  name_suffix = "${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
+  name_suffix = "${var.project_name}-${var.environment}"
+
 }
 
 locals {
