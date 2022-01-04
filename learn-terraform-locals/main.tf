@@ -18,6 +18,17 @@ locals {
   name_suffix = "${var.resource_tags["project"]}-${var.resource_tags["environment"]}"
 }
 
+locals {
+  required_tags = {
+    project     = var.project_name,
+    environment = var.environment
+  }
+  # Add a new locals block to main.tf to create a map
+  # combining both required tags and user defined tags.
+  tags = merge(var.resource_tags, local.required_tags)
+}
+
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.64.0"
