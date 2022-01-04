@@ -101,3 +101,6 @@ The -refresh-only mode for terraform plan and terraform apply operations makes i
 ```
 terraform plan -refresh-only
 ```
+
+# terraform get
+to install new modules.
