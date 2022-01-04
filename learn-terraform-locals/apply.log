@@ -1,0 +1,13 @@
+$ terraform apply
+## ...
+
+Apply complete! Resources: 8 added, 0 changed, 4 destroyed.
+
+Outputs:
+
+instance_ids = [
+  "i-0bc4309c117df766a",
+  "i-0aaa6de2b610ae749",
+  "i-035ff2723aace0f12",
+  "i-02640c564d3f08152",
+]
