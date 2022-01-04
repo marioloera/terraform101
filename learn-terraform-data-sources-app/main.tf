@@ -74,6 +74,8 @@ module "elb_http" {
 }
 
 resource "aws_instance" "app" {
+  # Update the configuration to use multiple EC2 instances per subnet.
+  count = var.instances_per_subnet * length(data.terraform_remote_state.vpc.outputs.private_subnet_ids)
 
   # ami = "ami-04d29b6f966df1537"
   # Replace the hard-coded AMI ID with the one loaded from the new data source.
@@ -81,8 +83,10 @@ resource "aws_instance" "app" {
 
   instance_type = var.instance_type
 
-  subnet_id              = ""
-  vpc_security_group_ids = []
+  # update the EC2 instance configuration to use the subnet and security group configuration from the VPC workspace.
+  subnet_id              = data.terraform_remote_state.vpc.outputs.private_subnet_ids[count.index % length(data.terraform_remote_state.vpc.outputs.private_subnet_ids)]
+  vpc_security_group_ids = data.terraform_remote_state.vpc.outputs.app_security_group_ids
+
 
   user_data = <<-EOF
     #!/bin/bash
