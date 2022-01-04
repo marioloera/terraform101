@@ -19,6 +19,16 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+}
+
 provider "aws" {
   # region = "us-east-1"
   # Replace the hard-coded region configuration in main.tf
@@ -64,7 +74,10 @@ module "elb_http" {
 }
 
 resource "aws_instance" "app" {
-  ami = "ami-04d29b6f966df1537"
+
+  # ami = "ami-04d29b6f966df1537"
+  # Replace the hard-coded AMI ID with the one loaded from the new data source.
+  ami = data.aws_ami.amazon_linux.id
 
   instance_type = var.instance_type
 
