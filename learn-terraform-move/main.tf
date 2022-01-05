@@ -16,7 +16,7 @@ provider "aws" {
   region = var.region
 }
 
-module "vpc" {
+module "vpc_learn" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.21.0"
 
@@ -35,10 +35,10 @@ module "vpc" {
 module "ec2_instance" {
   source         = "./modules/compute"
   security_group = module.security_group.sg_id
-  public_subnets = module.vpc.public_subnets
+  public_subnets = module.vpc_learn.public_subnets
 }
 
 module "security_group" {
   source = "./modules/security_group"
-  vpc_id = module.vpc.vpc_id
+  vpc_id = module.vpc_learn.vpc_id
 }
