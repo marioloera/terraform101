@@ -104,3 +104,17 @@ terraform plan -refresh-only
 
 # terraform get
 to install new modules.
+
+# terraform workspace list
+Terraform print out the list of your workspaces with the currently selected one denoted by a *.
+
+* Create a new 'dev' workspace in the Terraform CLI with the workspace command.
+
+```
+terraform workspace new dev
+terrafrom init
+terraform workspace list
+terraform apply -var-file=dev.tfvars
+terraform destroy -var-file=dev.tfvars
+terraform workspace select other_workspace
+```
