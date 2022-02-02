@@ -19,4 +19,6 @@ resource "google_monitoring_alert_policy" "mario_metric_alert" {
   combiner = "OR"
   enabled  = true
   # notification_channels = [data.google_monitoring_notification_channel.basic.name]
+
+  depends_on = [google_logging_metric.mario_metric]
 }
