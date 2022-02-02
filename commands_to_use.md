@@ -9,8 +9,7 @@ The -upgrade flag will upgrade all providers to the latest version consistent wi
 
 # terraform plan
 
-# terraform apply
-
+# terraform apply -auto-approve
 ## how to give values to varaibles:
 1. passing variables values in cli
 ```
