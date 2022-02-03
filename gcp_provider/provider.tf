@@ -1,3 +1,8 @@
+terraform {
+  required_version = "1.1.5"
+}
+
+
 provider "google" {
   project = "trustly-data-services-prod"
   region  = "europe-west1"
