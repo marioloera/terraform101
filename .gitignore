@@ -34,3 +34,4 @@ override.tf.json
 
 **/keys/*.csv
 **/keys/*.json
+venv
