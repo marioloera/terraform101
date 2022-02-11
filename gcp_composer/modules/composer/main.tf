@@ -47,7 +47,6 @@ resource "google_composer_environment" "composer" {
 
 resource "google_compute_network" "composer_network" {
   name                    = format("composer-network%s", var.name_suffix)
-  #name                    = "composer-network"
   auto_create_subnetworks = false
 }
 
