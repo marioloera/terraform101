@@ -6,7 +6,7 @@ resource "google_project_service" "composer_api" {
 }
 
 resource "google_composer_environment" "composer" {
-  provider = google-beta
+  # provider = google-beta
   name     = format("composer-env-%s%s", data.google_project.current_project.project_id, var.name_suffix)
   region   = "europe-west1" # Needs to be defined explicitly not to force replacement
 
