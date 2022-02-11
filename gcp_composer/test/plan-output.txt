@@ -1,3 +1,4 @@
+module.composer_airflow_two.google_project_service.composer_api: Refreshing state... [id=trustly-data-services-test/composer.googleapis.com]
 google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
 google_service_account.svc_composer_worker: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/111300218573403041422]
 
@@ -132,14 +133,6 @@ Terraform will perform the following actions:
       + stack_type                 = (known after apply)
     }
 
-  # module.composer_airflow_two.google_project_service.composer_api will be created
-  + resource "google_project_service" "composer_api" {
-      + disable_on_destroy = true
-      + id                 = (known after apply)
-      + project            = (known after apply)
-      + service            = "composer.googleapis.com"
-    }
-
   # module.composer_airflow_two.google_storage_bucket_iam_member.github_action_object_admin will be created
   + resource "google_storage_bucket_iam_member" "github_action_object_admin" {
       + bucket = (known after apply)
@@ -149,7 +142,7 @@ Terraform will perform the following actions:
       + role   = "roles/storage.objectAdmin"
     }
 
-Plan: 5 to add, 0 to change, 0 to destroy.
+Plan: 4 to add, 0 to change, 0 to destroy.
 
 ─────────────────────────────────────────────────────────────────────────────
 
