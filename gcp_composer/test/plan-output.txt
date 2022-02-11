@@ -1,0 +1,177 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # google_service_account.svc_composer_worker will be created
+  + resource "google_service_account" "svc_composer_worker" {
+      + account_id = "svc-composer-worker"
+      + disabled   = false
+      + email      = (known after apply)
+      + id         = (known after apply)
+      + name       = (known after apply)
+      + project    = (known after apply)
+      + unique_id  = (known after apply)
+    }
+
+  # google_service_account.svc_github_action_application_deployment will be created
+  + resource "google_service_account" "svc_github_action_application_deployment" {
+      + account_id = "svc-application-deployment"
+      + disabled   = false
+      + email      = (known after apply)
+      + id         = (known after apply)
+      + name       = (known after apply)
+      + project    = (known after apply)
+      + unique_id  = (known after apply)
+    }
+
+  # module.composer_airflow_two.google_composer_environment.composer will be created
+  + resource "google_composer_environment" "composer" {
+      + id      = (known after apply)
+      + name    = "composer-env-trustly-data-services-test-two"
+      + project = (known after apply)
+      + region  = "europe-west1"
+
+      + config {
+          + airflow_uri      = (known after apply)
+          + dag_gcs_prefix   = (known after apply)
+          + environment_size = "ENVIRONMENT_SIZE_SMALL"
+          + gke_cluster      = (known after apply)
+          + node_count       = (known after apply)
+
+          + database_config {
+              + machine_type = (known after apply)
+            }
+
+          + encryption_config {
+              + kms_key_name = (known after apply)
+            }
+
+          + node_config {
+              + disk_size_gb         = (known after apply)
+              + ip_allocation_policy = (known after apply)
+              + machine_type         = (known after apply)
+              + network              = (known after apply)
+              + oauth_scopes         = (known after apply)
+              + service_account      = (known after apply)
+              + subnetwork           = (known after apply)
+              + zone                 = (known after apply)
+            }
+
+          + private_environment_config {
+              + cloud_composer_network_ipv4_cidr_block = (known after apply)
+              + cloud_sql_ipv4_cidr_block              = (known after apply)
+              + enable_private_endpoint                = (known after apply)
+              + master_ipv4_cidr_block                 = (known after apply)
+              + web_server_ipv4_cidr_block             = (known after apply)
+            }
+
+          + software_config {
+              + airflow_config_overrides = {
+                  + "webserver-navbar_color" = "#00ff3c"
+                }
+              + image_version            = "composer-2.0.3-airflow-2.2.3"
+              + pypi_packages            = {
+                  + "bigquery-schema-generator" = "==1.5"
+                  + "jira"                      = "==2.0.0"
+                  + "simple-salesforce"         = "==1.10.1"
+                  + "slack-sdk"                 = "==3.4.2"
+                }
+              + python_version           = (known after apply)
+              + scheduler_count          = (known after apply)
+            }
+
+          + web_server_config {
+              + machine_type = (known after apply)
+            }
+
+          + web_server_network_access_control {
+              + allowed_ip_range {
+                  + description = (known after apply)
+                  + value       = (known after apply)
+                }
+            }
+
+          + workloads_config {
+              + scheduler {
+                  + count      = (known after apply)
+                  + cpu        = (known after apply)
+                  + memory_gb  = (known after apply)
+                  + storage_gb = (known after apply)
+                }
+
+              + web_server {
+                  + cpu        = (known after apply)
+                  + memory_gb  = (known after apply)
+                  + storage_gb = (known after apply)
+                }
+
+              + worker {
+                  + cpu        = (known after apply)
+                  + max_count  = (known after apply)
+                  + memory_gb  = (known after apply)
+                  + min_count  = (known after apply)
+                  + storage_gb = (known after apply)
+                }
+            }
+        }
+    }
+
+  # module.composer_airflow_two.google_compute_network.composer_network will be created
+  + resource "google_compute_network" "composer_network" {
+      + auto_create_subnetworks         = false
+      + delete_default_routes_on_create = false
+      + gateway_ipv4                    = (known after apply)
+      + id                              = (known after apply)
+      + mtu                             = (known after apply)
+      + name                            = "composer-network-two"
+      + project                         = (known after apply)
+      + routing_mode                    = (known after apply)
+      + self_link                       = (known after apply)
+    }
+
+  # module.composer_airflow_two.google_compute_subnetwork.composer_subnetwork will be created
+  + resource "google_compute_subnetwork" "composer_subnetwork" {
+      + creation_timestamp         = (known after apply)
+      + external_ipv6_prefix       = (known after apply)
+      + fingerprint                = (known after apply)
+      + gateway_address            = (known after apply)
+      + id                         = (known after apply)
+      + ip_cidr_range              = "192.168.22.0/24"
+      + ipv6_cidr_range            = (known after apply)
+      + name                       = "composer-subnetwork-two"
+      + network                    = (known after apply)
+      + private_ipv6_google_access = (known after apply)
+      + project                    = (known after apply)
+      + purpose                    = (known after apply)
+      + region                     = "europe-west1"
+      + secondary_ip_range         = (known after apply)
+      + self_link                  = (known after apply)
+      + stack_type                 = (known after apply)
+    }
+
+  # module.composer_airflow_two.google_project_service.composer_api will be created
+  + resource "google_project_service" "composer_api" {
+      + disable_on_destroy = true
+      + id                 = (known after apply)
+      + project            = (known after apply)
+      + service            = "composer.googleapis.com"
+    }
+
+  # module.composer_airflow_two.google_storage_bucket_iam_member.github_action_object_admin will be created
+  + resource "google_storage_bucket_iam_member" "github_action_object_admin" {
+      + bucket = (known after apply)
+      + etag   = (known after apply)
+      + id     = (known after apply)
+      + member = (known after apply)
+      + role   = "roles/storage.objectAdmin"
+    }
+
+Plan: 7 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
