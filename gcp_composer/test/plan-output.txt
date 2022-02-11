@@ -1,31 +1,11 @@
+google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
+google_service_account.svc_composer_worker: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/111300218573403041422]
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
-
-  # google_service_account.svc_composer_worker will be created
-  + resource "google_service_account" "svc_composer_worker" {
-      + account_id = "svc-composer-worker"
-      + disabled   = false
-      + email      = (known after apply)
-      + id         = (known after apply)
-      + name       = (known after apply)
-      + project    = (known after apply)
-      + unique_id  = (known after apply)
-    }
-
-  # google_service_account.svc_github_action_application_deployment will be created
-  + resource "google_service_account" "svc_github_action_application_deployment" {
-      + account_id = "svc-application-deployment"
-      + disabled   = false
-      + email      = (known after apply)
-      + id         = (known after apply)
-      + name       = (known after apply)
-      + project    = (known after apply)
-      + unique_id  = (known after apply)
-    }
 
   # module.composer_airflow_two.google_composer_environment.composer will be created
   + resource "google_composer_environment" "composer" {
@@ -55,7 +35,7 @@ Terraform will perform the following actions:
               + machine_type         = (known after apply)
               + network              = (known after apply)
               + oauth_scopes         = (known after apply)
-              + service_account      = (known after apply)
+              + service_account      = "projects/trustly-data-services-test/serviceAccounts/svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com"
               + subnetwork           = (known after apply)
               + zone                 = (known after apply)
             }
@@ -165,11 +145,11 @@ Terraform will perform the following actions:
       + bucket = (known after apply)
       + etag   = (known after apply)
       + id     = (known after apply)
-      + member = (known after apply)
+      + member = "serviceAccount:svc-application-deployment@trustly-data-services-test.iam.gserviceaccount.com"
       + role   = "roles/storage.objectAdmin"
     }
 
-Plan: 7 to add, 0 to change, 0 to destroy.
+Plan: 5 to add, 0 to change, 0 to destroy.
 
 ─────────────────────────────────────────────────────────────────────────────
 
