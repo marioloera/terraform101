@@ -1,0 +1,18 @@
+module "composer" {
+  source = "../modules/composer"
+
+  composer_worker_service_account_name         = google_service_account.svc_composer_worker.name
+  application_deployment_service_account_email = google_service_account.svc_github_action_application_deployment.email
+  machine_type                                 = "e2-standard-4"
+  airflow_image_version                        = "composer-1.17.9-airflow-1.10.15"
+  pypi_packages = {
+    "bigquery-schema-generator" = "==1.1"
+    "jira"                      = "==2.0.0"
+    "simple-salesforce"         = "==1.10.1"
+    "slack-sdk"                 = "==3.4.2"
+  }
+  airflow_config_overrides = {
+    "core-parallelism"       = "16"
+    "webserver-navbar_color" = "#ff7700"
+  }
+}
