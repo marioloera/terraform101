@@ -1,6 +1,6 @@
 module.composer_airflow_two.google_project_service.composer_api: Refreshing state... [id=trustly-data-services-test/composer.googleapis.com]
-google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
 google_service_account.svc_composer_worker: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/111300218573403041422]
+google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -100,8 +100,8 @@ Terraform will perform the following actions:
         }
     }
 
-  # module.composer_airflow_two.google_compute_network.composer_network will be created
-  + resource "google_compute_network" "composer_network" {
+  # module.composer_airflow_two.google_compute_network.composer2_network will be created
+  + resource "google_compute_network" "composer2_network" {
       + auto_create_subnetworks         = false
       + delete_default_routes_on_create = false
       + gateway_ipv4                    = (known after apply)
@@ -113,8 +113,8 @@ Terraform will perform the following actions:
       + self_link                       = (known after apply)
     }
 
-  # module.composer_airflow_two.google_compute_subnetwork.composer_subnetwork will be created
-  + resource "google_compute_subnetwork" "composer_subnetwork" {
+  # module.composer_airflow_two.google_compute_subnetwork.composer2_subnetwork will be created
+  + resource "google_compute_subnetwork" "composer2_subnetwork" {
       + creation_timestamp         = (known after apply)
       + external_ipv6_prefix       = (known after apply)
       + fingerprint                = (known after apply)
