@@ -28,12 +28,6 @@ resource "google_composer_environment" "composer" {
       airflow_config_overrides = var.airflow_config_overrides
     }
 
-    # Weekends, daytime, after the morning loads have run
-    maintenance_window {
-      start_time = "2021-01-01T08:00:00Z"
-      end_time   = "2021-01-01T16:00:00Z"
-      recurrence = "FREQ=WEEKLY;BYDAY=SA,SU"
-    }
   }
   depends_on = [google_project_service.composer_api]
 }
