@@ -12,6 +12,8 @@ resource "google_composer_environment" "composer" {
 
   config {
 
+     environment_size = "ENVIRONMENT_SIZE_SMALL"
+
     node_config {
 
       network    = google_compute_network.composer_network.id
