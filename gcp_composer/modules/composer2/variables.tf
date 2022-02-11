@@ -8,16 +8,10 @@ variable "application_deployment_service_account_email" {
   type        = string
 }
 
-variable "machine_type" {
-  description = "Type of Google Cloud Compute instances to use for the GKE cluster"
-  type        = string
-  default     = "n1-standard-2"
-}
-
 variable "airflow_image_version" {
   description = "Determines the Cloud Composer/Airflow image version to be installed"
   type        = string
-  default     = "composer-1.11.1-airflow-1.10.9"
+  default     = "composer-2.0.3-airflow-2.2.3"
 }
 
 variable "pypi_packages" {

@@ -4,8 +4,8 @@ module "composer_airflow_two" {
   name_suffix                                  = "-two"
   composer_worker_service_account_name         = google_service_account.svc_composer_worker.name
   application_deployment_service_account_email = google_service_account.svc_github_action_application_deployment.email
-  # machine_type                                 = "e2-standard-4"
   airflow_image_version                        = "composer-2.0.3-airflow-2.2.3"
+
   pypi_packages = {
     "bigquery-schema-generator" = "==1.5"
     "jira"                      = "==2.0.0"

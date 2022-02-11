@@ -11,26 +11,17 @@ resource "google_composer_environment" "composer" {
   region   = "europe-west1" # Needs to be defined explicitly not to force replacement
 
   config {
-    node_count = 3
 
     node_config {
-      zone         = "europe-west1-d"
-      machine_type = var.machine_type
 
       network    = google_compute_network.composer_network.id
       subnetwork = google_compute_subnetwork.composer_subnetwork.id
-
-      oauth_scopes = [
-        "https://www.googleapis.com/auth/cloud-platform",
-        "https://www.googleapis.com/auth/drive"
-      ]
 
       service_account = var.composer_worker_service_account_name
     }
 
     software_config {
       image_version            = var.airflow_image_version
-      python_version           = 3
       pypi_packages            = var.pypi_packages
       airflow_config_overrides = var.airflow_config_overrides
     }
