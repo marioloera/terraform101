@@ -16,8 +16,8 @@ resource "google_composer_environment" "composer" {
 
     node_config {
 
-      network    = google_compute_network.composer2_network.id
-      subnetwork = google_compute_subnetwork.composer2_subnetwork.id
+      network    = google_compute_network.composer_network.id
+      subnetwork = google_compute_subnetwork.composer_subnetwork.id
 
       service_account = var.composer_worker_service_account_name
     }
@@ -32,16 +32,16 @@ resource "google_composer_environment" "composer" {
   depends_on = [google_project_service.composer_api]
 }
 
-resource "google_compute_network" "composer2_network" {
+resource "google_compute_network" "composer_network" {
   name                    = format("composer-network%s", var.name_suffix)
   auto_create_subnetworks = false
 }
 
-resource "google_compute_subnetwork" "composer2_subnetwork" {
+resource "google_compute_subnetwork" "composer_subnetwork" {
   name          = format("composer-subnetwork%s", var.name_suffix)
   ip_cidr_range = "192.168.22.0/24"
   region        = "europe-west1"
-  network       = google_compute_network.composer2_network.id
+  network       = google_compute_network.composer_network.id
 }
 
 # Needed to make the automated DAG deployments from bi-gcp-services work
