@@ -1,0 +1,22 @@
+module.composer_airflow_two.google_composer_environment.composer: Creating...
+╷
+│ Error: googleapi: Error 400: 
+    Composer API Service Agent service account does not have 
+    required permissions set. 
+    Please refer to 
+    https://cloud.google.com/composer/docs/composer-2/create-environments#grant-permissions
+    and Composer Creation Troubleshooting pages to resolve this issue., 
+    failedPrecondition
+│ 
+│   with module.composer_airflow_two.google_composer_environment.composer,
+│   on ../modules/composer2/main.tf line 8, in resource "google_composer_environment" "composer":
+│    8: resource "google_composer_environment" "composer" {
+│ 
+╵
+
+
+# roles/composer.ServiceAgentV2Ext
+option
+1) add roles/composer.ServiceAgentV2Ext to svc_composer_worker
+
+2) use terraform service account

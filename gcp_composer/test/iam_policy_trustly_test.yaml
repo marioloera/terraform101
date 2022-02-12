@@ -1,0 +1,207 @@
+bindings:
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/appengine.appAdmin
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/appengine.appCreator
+- members:
+  - serviceAccount:service-496466744113@gcp-gae-service.iam.gserviceaccount.com
+  role: roles/appengine.serviceAgent
+- members:
+  - serviceAccount:service-496466744113@gae-api-prod.google.com.iam.gserviceaccount.com
+  role: roles/appengineflex.serviceAgent
+- members:
+  - serviceAccount:service-496466744113@gcp-sa-artifactregistry.iam.gserviceaccount.com
+  role: roles/artifactregistry.serviceAgent
+- members:
+  - group:team.dataservices@trustly.com
+  role: roles/bigquery.admin
+- members:
+  - group:bigquery.powerusers@trustly.com
+  role: roles/bigquery.dataEditor
+- members:
+  - serviceAccount:svc-application-deployment@trustly-data-services-prod.iam.gserviceaccount.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-dbt@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:terraform-admin@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/bigquery.dataOwner
+- members:
+  - group:bigquery.powerusers@trustly.com
+  - group:team.businessintelligence@trustly.com
+  - group:team.tech@trustly.com
+  - serviceAccount:svc-application-deployment@trustly-data-services-prod.iam.gserviceaccount.com
+  - serviceAccount:svc-application-deployment@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-dataflow-worker@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-dbt@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-qliksense@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/bigquery.jobUser
+- members:
+  - serviceAccount:svc-qliksense@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/bigquery.readSessionUser
+- members:
+  - serviceAccount:service-496466744113@gcp-sa-bigquerydatatransfer.iam.gserviceaccount.com
+  role: roles/bigquerydatatransfer.serviceAgent
+- members:
+  - serviceAccount:496466744113@cloudbuild.gserviceaccount.com
+  role: roles/cloudbuild.builds.builder
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/cloudbuild.builds.editor
+- members:
+  - serviceAccount:service-496466744113@gcp-sa-cloudbuild.iam.gserviceaccount.com
+  role: roles/cloudbuild.serviceAgent
+- members:
+  - serviceAccount:service-496466744113@gcf-admin-robot.iam.gserviceaccount.com
+  role: roles/cloudfunctions.serviceAgent
+- members:
+  - serviceAccount:service-496466744113@gcp-sa-cloudscheduler.iam.gserviceaccount.com
+  role: roles/cloudscheduler.serviceAgent
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:trustly-data-services-test@appspot.gserviceaccount.com
+  role: roles/cloudsql.client
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:trustly-data-services-test@appspot.gserviceaccount.com
+  role: roles/cloudsql.instanceUser
+- members:
+  - serviceAccount:service-496466744113@cloudcomposer-accounts.iam.gserviceaccount.com
+  role: roles/composer.serviceAgent
+- members:
+  - group:bigquery.powerusers@trustly.com
+  - group:team.businessintelligence@trustly.com
+  role: roles/composer.user
+- members:
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/composer.worker
+- members:
+  - serviceAccount:service-496466744113@compute-system.iam.gserviceaccount.com
+  role: roles/compute.serviceAgent
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/compute.storageAdmin
+- members:
+  - serviceAccount:service-496466744113@container-engine-robot.iam.gserviceaccount.com
+  role: roles/container.serviceAgent
+- members:
+  - serviceAccount:service-496466744113@containerregistry.iam.gserviceaccount.com
+  role: roles/containerregistry.ServiceAgent
+- members:
+  - group:bigquery.powerusers@trustly.com
+  - serviceAccount:svc-application-deployment@trustly-data-services-prod.iam.gserviceaccount.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-dbt@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:terraform-admin@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/datacatalog.categoryAdmin
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-application-deployment@trustly-data-services-prod.iam.gserviceaccount.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-dbt@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-qliksense@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/datacatalog.categoryFineGrainedReader
+- members:
+  - serviceAccount:svc-application-deployment@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/dataflow.admin
+- members:
+  - serviceAccount:service-496466744113@dataflow-service-producer-prod.iam.gserviceaccount.com
+  role: roles/dataflow.serviceAgent
+- members:
+  - group:team.tech@trustly.com
+  role: roles/dataflow.viewer
+- members:
+  - serviceAccount:svc-dataflow-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/dataflow.worker
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:496466744113@cloudservices.gserviceaccount.com
+  - serviceAccount:service-496466744113@containerregistry.iam.gserviceaccount.com
+  role: roles/editor
+- members:
+  - serviceAccount:service-496466744113@gcp-sa-firestore.iam.gserviceaccount.com
+  role: roles/firestore.serviceAgent
+- members:
+  - group:team.dataservices@trustly.com
+  role: roles/iam.securityReviewer
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/iap.admin
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/iap.settingsAdmin
+- members:
+  - serviceAccount:trustly-data-services-test@appspot.gserviceaccount.com
+  role: roles/logging.logWriter
+- members:
+  - group:team.dataservices@trustly.com
+  role: roles/logging.privateLogViewer
+- members:
+  - group:bigquery.powerusers@trustly.com
+  role: roles/logging.viewer
+- members:
+  - group:bigquery.powerusers@trustly.com
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-data-science-deployment@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/ml.admin
+- members:
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/ml.developer
+- members:
+  - serviceAccount:service-496466744113@cloud-ml.google.com.iam.gserviceaccount.com
+  role: roles/ml.serviceAgent
+- members:
+  - serviceAccount:svc-dataflow-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/monitoring.metricWriter
+- members:
+  - group:team.dataservices@trustly.com
+  role: roles/monitoring.notificationChannelEditor
+- members:
+  - serviceAccount:service-496466744113@gcp-sa-notebooks.iam.gserviceaccount.com
+  role: roles/notebooks.serviceAgent
+- members:
+  - serviceAccount:terraform-admin@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/owner
+- members:
+  - serviceAccount:svc-application-deployment@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/pubsub.editor
+- members:
+  - serviceAccount:service-496466744113@serverless-robot-prod.iam.gserviceaccount.com
+  role: roles/run.serviceAgent
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-application-deployment@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/secretmanager.admin
+- members:
+  - serviceAccount:svc-application-deployment@trustly-data-services-prod.iam.gserviceaccount.com
+  - serviceAccount:trustly-data-services-test@appspot.gserviceaccount.com
+  role: roles/secretmanager.secretAccessor
+- members:
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-app-engine@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:svc-application-deployment@trustly-data-services-test.iam.gserviceaccount.com
+  - serviceAccount:terraform-admin@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/storage.admin
+- members:
+  - group:bigquery.powerusers@trustly.com
+  - group:team.dataservices@trustly.com
+  - serviceAccount:svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com
+  role: roles/storage.objectAdmin
+- members:
+  - group:team.businessintelligence@trustly.com
+  role: roles/viewer
+etag: BwXW9UQZCaU=
+version: 1
