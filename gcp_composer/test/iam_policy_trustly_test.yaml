@@ -71,6 +71,9 @@ bindings:
   role: roles/cloudsql.instanceUser
 - members:
   - serviceAccount:service-496466744113@cloudcomposer-accounts.iam.gserviceaccount.com
+  role: roles/composer.ServiceAgentV2Ext
+- members:
+  - serviceAccount:service-496466744113@cloudcomposer-accounts.iam.gserviceaccount.com
   role: roles/composer.serviceAgent
 - members:
   - group:bigquery.powerusers@trustly.com
@@ -203,5 +206,5 @@ bindings:
 - members:
   - group:team.businessintelligence@trustly.com
   role: roles/viewer
-etag: BwXW9UQZCaU=
+etag: BwXX0lcg2Ic=
 version: 1
