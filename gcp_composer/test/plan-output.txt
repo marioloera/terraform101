@@ -1,6 +1,8 @@
-module.composer_airflow_two.google_project_service.composer_api: Refreshing state... [id=trustly-data-services-test/composer.googleapis.com]
-google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
 google_service_account.svc_composer_worker: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/111300218573403041422]
+google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
+module.composer_airflow_two.google_project_service.composer_api: Refreshing state... [id=trustly-data-services-test/composer.googleapis.com]
+module.composer_airflow_two.google_compute_network.composer_network: Refreshing state... [id=projects/trustly-data-services-test/global/networks/composer-network-two]
+module.composer_airflow_two.google_compute_subnetwork.composer_subnetwork: Refreshing state... [id=projects/trustly-data-services-test/regions/europe-west1/subnetworks/composer-subnetwork-two]
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -34,10 +36,10 @@ Terraform will perform the following actions:
               + disk_size_gb         = (known after apply)
               + ip_allocation_policy = (known after apply)
               + machine_type         = (known after apply)
-              + network              = (known after apply)
+              + network              = "projects/trustly-data-services-test/global/networks/composer-network-two"
               + oauth_scopes         = (known after apply)
               + service_account      = "projects/trustly-data-services-test/serviceAccounts/svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com"
-              + subnetwork           = (known after apply)
+              + subnetwork           = "projects/trustly-data-services-test/regions/europe-west1/subnetworks/composer-subnetwork-two"
               + zone                 = (known after apply)
             }
 
@@ -100,39 +102,6 @@ Terraform will perform the following actions:
         }
     }
 
-  # module.composer_airflow_two.google_compute_network.composer_network will be created
-  + resource "google_compute_network" "composer_network" {
-      + auto_create_subnetworks         = false
-      + delete_default_routes_on_create = false
-      + gateway_ipv4                    = (known after apply)
-      + id                              = (known after apply)
-      + mtu                             = (known after apply)
-      + name                            = "composer-network-two"
-      + project                         = (known after apply)
-      + routing_mode                    = (known after apply)
-      + self_link                       = (known after apply)
-    }
-
-  # module.composer_airflow_two.google_compute_subnetwork.composer_subnetwork will be created
-  + resource "google_compute_subnetwork" "composer_subnetwork" {
-      + creation_timestamp         = (known after apply)
-      + external_ipv6_prefix       = (known after apply)
-      + fingerprint                = (known after apply)
-      + gateway_address            = (known after apply)
-      + id                         = (known after apply)
-      + ip_cidr_range              = "192.168.22.0/24"
-      + ipv6_cidr_range            = (known after apply)
-      + name                       = "composer-subnetwork-two"
-      + network                    = (known after apply)
-      + private_ipv6_google_access = (known after apply)
-      + project                    = (known after apply)
-      + purpose                    = (known after apply)
-      + region                     = "europe-west1"
-      + secondary_ip_range         = (known after apply)
-      + self_link                  = (known after apply)
-      + stack_type                 = (known after apply)
-    }
-
   # module.composer_airflow_two.google_storage_bucket_iam_member.github_action_object_admin will be created
   + resource "google_storage_bucket_iam_member" "github_action_object_admin" {
       + bucket = (known after apply)
@@ -142,7 +111,7 @@ Terraform will perform the following actions:
       + role   = "roles/storage.objectAdmin"
     }
 
-Plan: 4 to add, 0 to change, 0 to destroy.
+Plan: 2 to add, 0 to change, 0 to destroy.
 
 ─────────────────────────────────────────────────────────────────────────────
 
