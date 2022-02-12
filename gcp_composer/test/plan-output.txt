@@ -1,7 +1,8 @@
-google_service_account.svc_composer_worker: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/111300218573403041422]
 google_service_account.svc_github_action_application_deployment: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/103303564377518452756]
-module.composer_airflow_two.google_project_service.composer_api: Refreshing state... [id=trustly-data-services-test/composer.googleapis.com]
+google_project_iam_binding.composer_service_aggent2ext: Refreshing state... [id=trustly-data-services-test/roles/composer.ServiceAgentV2Ext]
 module.composer_airflow_two.google_compute_network.composer_network: Refreshing state... [id=projects/trustly-data-services-test/global/networks/composer-network-two]
+module.composer_airflow_two.google_project_service.composer_api: Refreshing state... [id=trustly-data-services-test/composer.googleapis.com]
+google_service_account.svc_composer_worker: Refreshing state... [id=projects/trustly-data-services-test/serviceAccounts/111300218573403041422]
 module.composer_airflow_two.google_compute_subnetwork.composer_subnetwork: Refreshing state... [id=projects/trustly-data-services-test/regions/europe-west1/subnetworks/composer-subnetwork-two]
 
 Terraform used the selected providers to generate the following execution
@@ -32,10 +33,18 @@ Terraform will perform the following actions:
               + kms_key_name = (known after apply)
             }
 
+          + maintenance_window {
+              + end_time   = (known after apply)
+              + recurrence = (known after apply)
+              + start_time = (known after apply)
+            }
+
           + node_config {
               + disk_size_gb         = (known after apply)
+              + enable_ip_masq_agent = (known after apply)
               + ip_allocation_policy = (known after apply)
               + machine_type         = (known after apply)
+              + max_pods_per_node    = (known after apply)
               + network              = "projects/trustly-data-services-test/global/networks/composer-network-two"
               + oauth_scopes         = (known after apply)
               + service_account      = "projects/trustly-data-services-test/serviceAccounts/svc-composer-worker@trustly-data-services-test.iam.gserviceaccount.com"
@@ -44,9 +53,11 @@ Terraform will perform the following actions:
             }
 
           + private_environment_config {
+              + cloud_composer_connection_subnetwork   = (known after apply)
               + cloud_composer_network_ipv4_cidr_block = (known after apply)
               + cloud_sql_ipv4_cidr_block              = (known after apply)
               + enable_private_endpoint                = (known after apply)
+              + enable_privately_used_public_ips       = (known after apply)
               + master_ipv4_cidr_block                 = (known after apply)
               + web_server_ipv4_cidr_block             = (known after apply)
             }
