@@ -30,3 +30,7 @@ option
 - members:
   - serviceAccount:service-496466744113@cloudcomposer-accounts.iam.gserviceaccount.com
   role: roles/composer.serviceAgent
+
+
+terraform plan -target="google_project_iam_binding.composer_service_aggent2ext"
+terraform apply -target="google_project_iam_binding.composer_service_aggent2ext"
