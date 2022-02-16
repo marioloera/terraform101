@@ -1,7 +1,7 @@
-resource "local_file" "f1" {
-  content  = "hola 1\n"
-  filename = "./artifacts/f1.txt"
-}
+# resource "local_file" "f1" {
+#   content  = "hola 1\n"
+#   filename = "./artifacts/f1.txt"
+# }
 
 resource "local_file" "fx" {
   count = 2
