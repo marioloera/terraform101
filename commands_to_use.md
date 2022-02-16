@@ -89,10 +89,10 @@ Now run terraform import to attach the existing Docker container to the docker_c
 terraform import docker_container.web $(docker inspect --format="{{.ID}}" hashicorp-learn)
 ```
 
-# -replace flag for terraform plan and terraform apply
-The -replace flag allows you to target specific resources and avoid destroying all the resources in your workspace just to fix one of them.
+# -target flag for terraform plan and terraform apply
+The -target flag allows you to target specific resources and avoid destroying all the resources in your workspace just to fix one of them.
 ```
-terraform plan -replace="aws_instance.example"
+terraform plan -target="aws_instance.example"
 ```
 
 # -refresh-only flag for terraform plan and terraform apply
